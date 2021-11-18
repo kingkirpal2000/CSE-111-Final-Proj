@@ -15,7 +15,7 @@ create table Stocks(
     market_cap int,
     PE float(3,2),
     type varchar(5) not null,
-    div_rate float(2,2) 
+    div_rate float(2,2)
 );
 
 create table Crypto(
@@ -32,10 +32,10 @@ create table Crypto(
 );
 
 create table Forex(
-    currency_code varchar(5) PRIMARY KEY,
+    currency_code varchar(10) PRIMARY KEY,
     currency varchar(20),
-    Price float(5,2) not null,
-    added_by date not null,
+    Price float(5,5) not null,
+    added_by varchar(20) not null,
     added_date date not null
 );
 
@@ -58,10 +58,10 @@ INSERT INTO Users VALUES (4, 'John Smith', 'User', 'Growth');
 INSERT INTO Users VALUES (5, 'Arthur Williams', 'User', 'Div');
 INSERT INTO Users Values (6, 'Jackie Wang', 'User', 'Growth');
 
-INSERT INTO Forex VALUES ("USD/JPY", "USD", 114.2590, "Sabir Kirpal", '2021-11-16')
-INSERT INTO Forex VALUES ("USD/CNY", "USD", 6.3851, "Sabir Kirpal", '2021-11-16')
-INSERT INTO Forex VALUES ("CNY/INR", "CNY", 11.6170, "Sabir Kirpal", '2021-11-16')
-INSERT INTO Forex VALUES ("GBP/INR", "GPB", 100.119, "Sabir Kirpal", '2021-11-16')
+INSERT INTO Forex VALUES ("USD/JPY", "USD", 114.25, "Sabir Kirpal", '2021-11-16')
+INSERT INTO Forex VALUES ("USD/CNY", "USD", 6.38, "Sabir Kirpal", '2021-11-16')
+INSERT INTO Forex VALUES ("CNY/INR", "CNY", 11.61, "Sabir Kirpal", '2021-11-16')
+INSERT INTO Forex VALUES ("GBP/INR", "GPB", 100.11, "Sabir Kirpal", '2021-11-16')
 
 INSERT INTO Stocks VALUES ('T', 'At&T', 24.56, 33.88, 'Navroop Khangura', '2021-11-16', 176100000000, 203.13, 'Safe', 8.43);
 INSERT INTO Stocks VALUES ('DKNG', 'Draft Kings', 37.36, 74.38, 'Navroop Khangura', '2021-11-16', 15392000000, Null, 'Growth', null);
@@ -69,11 +69,11 @@ INSERT INTO Stocks VALUES ('BYND', 'Beyond Meat', 76.77, 221.0,  'Navroop Khangu
 INSERT INTO Stocks VALUES ('AMZN', 'Amazon', 2881.0, 3773.08, 'Navroop Khangura', '2021-11-16', 1800000000000, 69.45, 'Safe', null);
 INSERT INTO Stocks VALUES ('AAPL', 'Apple', 112.59, 157.26, 'Navroop Khangura', '2021-11-16', 2518000000000, 27.36, 'Safe', 0.88);
 Insert INTO Stocks Values ('CLOV', 'Clover Health Investment', 6.31, 28.85, 'Navroop Khangura', '2021-11-17',2910000000, Null,  'Growth', Null);
-INSERT INTO Stocks VALUES ('QS', 'QuantumScape Corporation', 17.55, 132.73, 'Sabir Kirpal', '2021-11-16', 15460000000, Null, 'Robinhood', 'Growth', Null);
-INSERT INTO Stocks VALUES ('DADA', 'Dada Nexus', 17.57, 61.27, 'Sabir Kirpal', '2021-11-16', 5310000000, Null, 'Robhinhood', 'Growth', null);
-INSERT INTO Stocks VALUES ('CPNG', 'Coupang', 17.57, 61.27,  'Sabir Kirpal', '2021-11-16', 54020000000, Null, 'Robinhood', 'Growth', null);
-INSERT INTO Stocks VALUES ('IFN', 'The India Fund Inc.', 18.23, 23.78, 'Sabir Kirpal', '2021-11-16', 625530000, 9.94, 'Robhinhood', 'Safe', 10.49);
-INSERT INTO Stocks VALUES ('TKR', 'The Timken Company', 64.66, 92.39, 'Sabir Kirpal', '2021-11-16', 5510000000, 15.91, 'Robhinhood', 'Safe', 1.57);
+INSERT INTO Stocks VALUES ('QS', 'QuantumScape Corporation', 17.55, 132.73, 'Sabir Kirpal', '2021-11-16', 15460000000, Null, 'Growth', Null);
+INSERT INTO Stocks VALUES ('DADA', 'Dada Nexus', 17.57, 61.27, 'Sabir Kirpal', '2021-11-16', 5310000000, Null, 'Growth', null);
+INSERT INTO Stocks VALUES ('CPNG', 'Coupang', 17.57, 61.27,  'Sabir Kirpal', '2021-11-16', 54020000000, Null, 'Growth', null);
+INSERT INTO Stocks VALUES ('IFN', 'The India Fund Inc.', 18.23, 23.78, 'Sabir Kirpal', '2021-11-16', 625530000, 9.94, 'Safe', 10.49);
+INSERT INTO Stocks VALUES ('TKR', 'The Timken Company', 64.66, 92.39, 'Sabir Kirpal', '2021-11-16', 5510000000, 15.91, 'Safe', 1.57);
 
 
 INSERT INTO Crypto VALUES ('BTC', 'Bitcoin', 16351.03, 68789.63,  'Navroop Khangura', '2021-11-16', 43.13, 18876425, 'Digital Gold', 'TRUE');
@@ -101,15 +101,15 @@ Select name, role From Users
 where role = 'Owner'
 
 /* Watchlist for user 1*/
-Select ticker from Watclist 
+Select ticker from Watclist
 where id = 1
 
 /* What brokerages have no  fees */
-Select name from brokerage 
+Select name from brokerage
 where fee = 0
 
 /* List the cyrpto that is mineable */
-Select name from Crypto 
+Select name from Crypto
 where mine = 'TRUE'
 
 /* List the purpose of each Crypto */
@@ -129,11 +129,11 @@ Select name, ticker, (high-low) as 'High-Low' From Stocks
 Order by High-Low DESC
 
 /* Remove BTC from User 1 watchlist */
-Delete from Watchlist 
+Delete from Watchlist
 where id = 1 and ticker = 'BTC'
 
 /* Remove ETH from User 2 watchlist */
-Delete from Watchlist 
+Delete from Watchlist
 where id = 2 and ticker = 'ETH'
 
 /* Update User 6 type to safe */
@@ -146,43 +146,43 @@ Select name, ticker from Stocks
 Where type = 'Growth'
 
 /* How many people watch At&T */
-Select count(id) from watchlist 
+Select count(id) from watchlist
 where ticker = 'T'
 
 /* List all companies that have PE less than 100 and Market Cap over a billion */
-Select name, ticker from Watchlist 
+Select name, ticker from Watchlist
 Where PE > 0 and PE < 100 And market_cap > 1000000000
 
 /* List all stocks with a div in order from highest to lowest*/
 Select name From Stocks
-where div_rate > 0 
+where div_rate > 0
 Order by div_rate DESC
 
 /* Top 3 percentage change in crypto, in order from highest to lowest */
-Select name, ticker, (high/low) as biggest_percentage_change from Crypto 
+Select name, ticker, (high/low) as biggest_percentage_change from Crypto
 Order by biggest_percentage_change DESC
 LIMIT 3
 
 /* What users follow crypto */
-Select id, Watchlist.ticker from Watchlist 
+Select id, Watchlist.ticker from Watchlist
 Inner join Crypto on Crypto.ticker = Watchlist.ticker
 
 /* List all the growth stocks user 2 follows */
-Select name, stocks.ticker from Stocks 
-INNER JOIN Watchlist on stocks.ticker = Watchlist.ticker 
+Select name, stocks.ticker from Stocks
+INNER JOIN Watchlist on stocks.ticker = Watchlist.ticker
 WHERE type = 'Growth'and Watchlist.id = 2
 
 /* What users follow Safe stocks with div higher than 5 */
-Select id, Watchlist.ticker from Watchlist 
+Select id, Watchlist.ticker from Watchlist
 Inner join Stocks on Stocks.ticker = Watchlist.ticker
 where type = 'Safe' and div_rate>5
 
 /* What growth and safe does user 1 follow */
-Select name, stocks.ticker from Stocks 
-INNER JOIN Watchlist on stocks.ticker = Watchlist.ticker 
+Select name, stocks.ticker from Stocks
+INNER JOIN Watchlist on stocks.ticker = Watchlist.ticker
 WHERE type = 'Growth'and Watchlist.id = 1
-union 
-Select name, stocks.ticker from Stocks 
-INNER JOIN Watchlist on stocks.ticker = Watchlist.ticker 
+union
+Select name, stocks.ticker from Stocks
+INNER JOIN Watchlist on stocks.ticker = Watchlist.ticker
 WHERE type = 'Safe'and Watchlist.id = 1
 
