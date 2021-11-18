@@ -58,16 +58,29 @@ INSERT INTO Users VALUES (4, 'John Smith', 'User', 'Growth');
 INSERT INTO Users VALUES (5, 'Arthur Williams', 'User', 'Div');
 INSERT INTO Users Values (6, 'Jackie Wang', 'User', 'Growth');
 
+INSERT INTO Forex VALUES ("USD/JPY", "USD", 114.2590, "Sabir Kirpal", '2021-11-16')
+INSERT INTO Forex VALUES ("USD/CNY", "USD", 6.3851, "Sabir Kirpal", '2021-11-16')
+INSERT INTO Forex VALUES ("CNY/INR", "CNY", 11.6170, "Sabir Kirpal", '2021-11-16')
+INSERT INTO Forex VALUES ("GBP/INR", "GPB", 100.119, "Sabir Kirpal", '2021-11-16')
+
 INSERT INTO Stocks VALUES ('T', 'At&T', 24.56, 33.88, 'Navroop Khangura', '2021-11-16', 176100000000, 203.13, 'Safe', 8.43);
 INSERT INTO Stocks VALUES ('DKNG', 'Draft Kings', 37.36, 74.38, 'Navroop Khangura', '2021-11-16', 15392000000, Null, 'Growth', null);
 INSERT INTO Stocks VALUES ('BYND', 'Beyond Meat', 76.77, 221.0,  'Navroop Khangura', '2021-11-16', 5096000000, Null, 'Growth', null);
 INSERT INTO Stocks VALUES ('AMZN', 'Amazon', 2881.0, 3773.08, 'Navroop Khangura', '2021-11-16', 1800000000000, 69.45, 'Safe', null);
 INSERT INTO Stocks VALUES ('AAPL', 'Apple', 112.59, 157.26, 'Navroop Khangura', '2021-11-16', 2518000000000, 27.36, 'Safe', 0.88);
 Insert INTO Stocks Values ('CLOV', 'Clover Health Investment', 6.31, 28.85, 'Navroop Khangura', '2021-11-17',2910000000, Null,  'Growth', Null);
+INSERT INTO Stocks VALUES ('QS', 'QuantumScape Corporation', 17.55, 132.73, 'Sabir Kirpal', '2021-11-16', 15460000000, Null, 'Robinhood', 'Growth', Null);
+INSERT INTO Stocks VALUES ('DADA', 'Dada Nexus', 17.57, 61.27, 'Sabir Kirpal', '2021-11-16', 5310000000, Null, 'Robhinhood', 'Growth', null);
+INSERT INTO Stocks VALUES ('CPNG', 'Coupang', 17.57, 61.27,  'Sabir Kirpal', '2021-11-16', 54020000000, Null, 'Robinhood', 'Growth', null);
+INSERT INTO Stocks VALUES ('IFN', 'The India Fund Inc.', 18.23, 23.78, 'Sabir Kirpal', '2021-11-16', 625530000, 9.94, 'Robhinhood', 'Safe', 10.49);
+INSERT INTO Stocks VALUES ('TKR', 'The Timken Company', 64.66, 92.39, 'Sabir Kirpal', '2021-11-16', 5510000000, 15.91, 'Robhinhood', 'Safe', 1.57);
+
 
 INSERT INTO Crypto VALUES ('BTC', 'Bitcoin', 16351.03, 68789.63,  'Navroop Khangura', '2021-11-16', 43.13, 18876425, 'Digital Gold', 'TRUE');
 INSERT INTO Crypto VALUES ('ETH', 'Etherum', 465.70, 4891.70, 'Navroop Khangura', '2021-11-16', 19.23, 118387641, 'Build and publish smart contracts', 'FALSE');
 INSERT INTO Crypto VALUES ('DOGE', 'Dogecoin', .00029, .7376, 'Navroop Khangura', '2021-11-16', 1.19, 132514414555, 'Meme', 'FALSE');
+INSERT INTO Crypto VALUES ('SHIB', 'Shiba Inu', 0.0000000000, 0.000044, 'Sabir Kirpal', '2021-11-16', 0.98, 2861000000, 'Meme', 'TRUE');
+INSERT INTO Crypto VALUES ('ALGO', 'Algorand', 0.10, 1.91, 'Sabir Kirpal', '2021-11-16', 0.48, 12000000000, 'Scalability & Security', 'FALSE');
 
 INSERT INTO Watchlist VALUES(1,'T');
 INSERT INTO Watchlist VALUES(1,'DKNG');
