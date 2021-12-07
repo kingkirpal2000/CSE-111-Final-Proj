@@ -7,7 +7,7 @@ public class Final {
         Connection connection = null;
         try { // create a database connection
             Statement statement;
-            connection = DriverManager.getConnection("jdbc:sqlite:Stocks.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:Trading.db");
             statement = connection.createStatement();
             statement.setQueryTimeout(15);
              // 15 second timeout
@@ -183,7 +183,7 @@ public class Final {
     public static void addStock(String ticker, String name, double low, double high, String added_by, String date, String market_cap, double PE, String type, double div_rate){
         Connection c=null;
         try{
-            c = DriverManager.getConnection("jdbc:sqlite:Stocks.db");
+            c = DriverManager.getConnection("jdbc:sqlite:Trading.db");
             Statement s = c.createStatement();
             String add = "INSERT into Stocks values(\'"+ticker+"\', \'"+name+"\', "+low+", "+high+", \'"+added_by+"\', \'"+date+"\', \'"+market_cap+"\', "+PE+", \'"+type+"\', "+div_rate+")";
             s.executeUpdate(add);
@@ -198,7 +198,7 @@ public class Final {
     public static void addCrypto(String ticker, String name, double low, double high, String added_by, String date, Double dominance, String current_supply, String max_supply, String purpose, Boolean mine){
         Connection c=null;
         try{
-            c = DriverManager.getConnection("jdbc:sqlite:Stocks.db");
+            c = DriverManager.getConnection("jdbc:sqlite:Trading.db");
             Statement s = c.createStatement();
             String add = "INSERT into Crypto values(\'"+ticker+"\', \'"+name+"\', "+low+", "+high+", \'"+added_by+"\', \'"+date+"\', "+dominance+", \'"+current_supply+"\', \'"+max_supply+"\', \'"+purpose+"\', "+mine+")";
             s.executeUpdate(add);
@@ -213,7 +213,7 @@ public class Final {
     public static void addBrokerage(String name, String type, int fee){
         Connection c=null;
         try{
-            c = DriverManager.getConnection("jdbc:sqlite:Stocks.db");
+            c = DriverManager.getConnection("jdbc:sqlite:Trading.db");
             Statement s = c.createStatement();
             String add = "INSERT into Brokerage values(\'"+name+"\', \'"+type+"\', "+fee+")";
             s.executeUpdate(add);
@@ -228,7 +228,7 @@ public class Final {
     public static void addUser(String name, String role, String type){
         Connection c=null;
         try{
-            c = DriverManager.getConnection("jdbc:sqlite:Stocks.db");
+            c = DriverManager.getConnection("jdbc:sqlite:Trading.db");
             Statement s = c.createStatement();
             ResultSet r = s.executeQuery("SELECT count(*) as total FROM Users");
             int total = r.getInt("total");
@@ -246,7 +246,7 @@ public class Final {
     public static void removeStock(String ticker){
         Connection c=null;
         try{
-            c = DriverManager.getConnection("jdbc:sqlite:Stocks.db");
+            c = DriverManager.getConnection("jdbc:sqlite:Trading.db");
             Statement s = c.createStatement();
             String remove = "DELETE FROM Stocks where ticker = "+ticker+"";
             s.executeUpdate(remove);
@@ -261,7 +261,7 @@ public class Final {
     public static void removeCrypto(String ticker){
         Connection c=null;
         try{
-            c = DriverManager.getConnection("jdbc:sqlite:Stocks.db");
+            c = DriverManager.getConnection("jdbc:sqlite:Trading.db");
             Statement s = c.createStatement();
             String remove = "DELETE FROM Crypto where ticker = "+ticker+"";
             s.executeUpdate(remove);
