@@ -46,6 +46,14 @@ public class Final {
                 switch (x) {
                     case 1:{
                     //adding Stock
+                        int id = 0;
+                        System.out.println("Enter your id: ");
+                        id = scan.nextInt();
+                        String role = security(id);
+                        if(role.equals("User")){
+                            System.out.println("\n NOT AN ADMIN");
+                            break;
+                        }
                         String ticker, name, added_by, type, date, market_cap, PE = "";
                         double low, high, div_rate = 0;
                         System.out.print("\nEnter stock ticker: ");
@@ -75,6 +83,14 @@ public class Final {
                     }
                     case 2:{
                     //adding Crypto to ETF
+                        int id = 0;
+                        System.out.println("Enter your id: ");
+                        id = scan.nextInt();
+                        String role = security(id);
+                        if(role.equals("User")){
+                            System.out.println("\n NOT AN ADMIN");
+                            break;
+                        }
                         String ticker, name, added_by, purpose, date, current_supply, max_supply, mine = " ";
                         double low, high, dominance = 0;
                         System.out.print("\nEnter crypto ticker: ");
@@ -108,6 +124,14 @@ public class Final {
                     }
                     case 3: {
                     //adding forex
+                        int id = 0;
+                        System.out.println("Enter your id: ");
+                        id = scan.nextInt();
+                        String role = security(id);
+                        if(role.equals("User")){
+                            System.out.println("\n NOT AN ADMIN");
+                            break;
+                        }
                         String comp, code, added_by, added_date = " ";
                         double price = 0;
                         System.out.print("\nEnter the currency code(EX: USD/JPY): ");
@@ -126,6 +150,14 @@ public class Final {
                     }
                     case 4:{
                     //adding brokerage
+                        int id = 0;
+                        System.out.println("Enter your id: ");
+                        id = scan.nextInt();
+                        String role = security(id);
+                        if(role.equals("User")){
+                            System.out.println("\n NOT AN ADMIN");
+                            break;
+                        }
                         String name, type = " ";
                         int fee = 0;
                         System.out.print("\nEnter name of brokerage: ");
@@ -139,6 +171,14 @@ public class Final {
                     }
                     case 5:{
                     //Delete stock
+                        int id = 0;
+                        System.out.println("Enter your id: ");
+                        id = scan.nextInt();
+                        String role = security(id);
+                        if(role.equals("User")){
+                            System.out.println("\n NOT AN ADMIN");
+                            break;
+                        }
                         String ticker = " ";
                         System.out.print("\nEnter the ticker of stock to remove: ");
                         ticker = scan.next();
@@ -147,6 +187,14 @@ public class Final {
                     }
                     case 6:{
                     // Delete Crypto
+                        int id = 0;
+                        System.out.println("Enter your id: ");
+                        id = scan.nextInt();
+                        String role = security(id);
+                        if(role.equals("User")){
+                            System.out.println("\n NOT AN ADMIN");
+                            break;
+                        }
                         String ticker = " ";
                         System.out.print("\nEnter the ticker of crypto to remove: ");
                         ticker = scan.next();
@@ -155,6 +203,14 @@ public class Final {
                     }
                     case 7:{
                     //Delete currency
+                        int id = 0;
+                        System.out.println("Enter your id: ");
+                        id = scan.nextInt();
+                        String role = security(id);
+                        if(role.equals("User")){
+                            System.out.println("\n NOT AN ADMIN");
+                            break;
+                        }
                         String code = " ";
                         System.out.print("\nEnter the currency code of currency to remove(EX: USD/CNY): ");
                         code = scan.next();
@@ -163,6 +219,14 @@ public class Final {
                     }  
                     case 8:{
                     //Delete Brokerage
+                        int id = 0;
+                        System.out.println("Enter your id: ");
+                        id = scan.nextInt();
+                        String role = security(id);
+                        if(role.equals("User")){
+                            System.out.println("\n NOT AN ADMIN");
+                            break;
+                        }
                         String name = " ";
                         System.out.print("\nEnter the name of Brokerage to remove: ");
                         name = scan.next();
@@ -171,6 +235,14 @@ public class Final {
                     }
                     case 9: {
                     //Update stock
+                        int id = 0;
+                        System.out.println("Enter your id: ");
+                        id = scan.nextInt();
+                        String role = security(id);
+                        if(role.equals("User")){
+                            System.out.println("\n NOT AN ADMIN");
+                            break;
+                        }
                         String ticker, added_by, date, market_cap, PE = "";
                         double low, high, div_rate = 0;
                         System.out.print("\nEnter stock ticker you want to update: ");
@@ -196,6 +268,14 @@ public class Final {
                     }     
                     case 10:{
                     //Update Crypto to ETF
+                        int id = 0;
+                        System.out.println("Enter your id: ");
+                        id = scan.nextInt();
+                        String role = security(id);
+                        if(role.equals("User")){
+                            System.out.println("\n NOT AN ADMIN");
+                            break;
+                        }
                         String ticker, added_by, date, current_supply, mine = " ";
                         double low, high, dominance = 0;
                         System.out.print("\nEnter crypto ticker you want to update: ");
@@ -221,6 +301,14 @@ public class Final {
                     }
                     case 11: {
                     //Update forex
+                        int id = 0;
+                        System.out.println("Enter your id: ");
+                        id = scan.nextInt();
+                        String role = security(id);
+                        if(role.equals("User")){
+                            System.out.println("\n NOT AN ADMIN");
+                            break;
+                        }
                         String comp, code, added_by, added_date = " ";
                         double price = 0;
                         System.out.print("\nEnter the currency code you want to update: ");
@@ -709,7 +797,26 @@ public class Final {
             c.close();
         }
         catch(SQLException e){
-        System.err.println("ERROR: " + e.getMessage());
+            System.err.println("ERROR: " + e.getMessage());
         }
+    }
+
+    public static String security(int id){
+        Connection c=null;
+        try{
+            c = DriverManager.getConnection("jdbc:sqlite:Trading.db");
+            Statement s = c.createStatement();
+            String sql = "Select role from Users where id = "+id;
+            ResultSet r = s.executeQuery(sql);
+            String role = "";
+            while(r.next()){
+                role = r.getString(1);
+            }
+            return role;
+        }
+        catch(SQLException e){
+            System.err.println("ERROR: " + e.getMessage());
+        }
+        return null;
     }
 }
