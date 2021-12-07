@@ -51,6 +51,41 @@ create table Brokerage (
     fee int not null
 );
 
+create table fav_stock(
+    fs_id int not null PRIMARY KEY,
+    fs_ticker varchar(5) not null PRIMARY KEY
+);
+
+create table fav_crypto(
+    fc_id int not null PRIMARY KEY,
+    fc_ticker varchar(5) not null PRIMARY KEY
+);
+
+create table fav_forex(
+    ff_id int not null PRIMARY KEY,
+    ff_currency_code varchar(5) not null PRIMARY KEY
+);
+
+create table s_tradesOn(
+    st_ticker varchar(5) not null,
+    st_brokerage_name varchar(20)
+);
+
+create table c_tradesOn(
+    ct_ticker varchar(5) not null,
+    ct_brokerage_name varchar(20)
+);
+
+create table f_tradesOn(
+    ft_currency_code varchar(5) not null,
+    ft_brokerage_name varchar(20)
+);
+
+create table u_tradesOn(
+    ut_id int not null,
+    ut_brokerage_name varchar(20)
+);
+
 
 INSERT INTO Users VALUES (1, 'Navroop Khangura', 'Owner', 'All');
 INSERT INTO Users VALUES (2, 'Sabir Kirpal', 'Owner', 'All');
