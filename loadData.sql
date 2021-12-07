@@ -4,6 +4,9 @@ INSERT INTO Users VALUES (3, 'John Doe', 'User', 'Safe');
 INSERT INTO Users VALUES (4, 'John Smith', 'User', 'Growth');
 INSERT INTO Users VALUES (5, 'Arthur Williams', 'User', 'Div');
 INSERT INTO Users Values (6, 'Jackie Wang', 'User', 'Growth');
+INSERT INTO Users VALUES (7, 'Hobbs Daniels', 'User', 'Div');
+INSERT INTO Users VALUES (8, 'Brandon Jones', 'User', 'Growth');
+INSERT INTO Users Values (9, 'Brenda Johnson', 'User', 'Growth');
 
 INSERT INTO Stocks VALUES ('T', 'At&T', 24.56, 33.88, 'Navroop Khangura', '2021-11-16', '176.1 B', 203.13, 'Safe', 8.43);
 INSERT INTO Stocks VALUES ('DKNG', 'Draft Kings', 37.36, 74.38, 'Navroop Khangura', '2021-11-16', '15.3 B', Null, 'Growth', null);
@@ -11,10 +14,38 @@ INSERT INTO Stocks VALUES ('BYND', 'Beyond Meat', 76.77, 221.0,  'Navroop Khangu
 INSERT INTO Stocks VALUES ('AMZN', 'Amazon', 2881.0, 3773.08, 'Navroop Khangura', '2021-11-16', '1.8 T', 69.45, 'Safe', null);
 INSERT INTO Stocks VALUES ('AAPL', 'Apple', 112.59, 157.26, 'Navroop Khangura', '2021-11-16', '2.5 T', 27.36, 'Safe', 0.88);
 Insert INTO Stocks Values ('CLOV', 'Clover Health Investment', 6.31, 28.85, 'Navroop Khangura', '2021-11-17','2 B', Null,  'Growth', Null);
+INSERT INTO Stocks VALUES ('TTCF', 'Tatooed Cheff', 0.36, 29.78, 'Sabir Kirpal', '2021-12-05', '1.1 B', NULL, 'Safe', 0);
+INSERT INTO Stocks VALUES ('SDC', 'Smile Direct', 2.85, 14.75, 'Sabir Kirpal', '2021-01-16', '300.3 M', Null, 'Growth', null);
+INSERT INTO Stocks VALUES ('WOOF', 'Petco', 29.50, 18.88,  'Sabir Kirpal', '2021-12-16', '3.26 B', Null, 'Growth', null);
+INSERT INTO Stocks VALUES ('MRNA', 'Moderna', 111.12, 484.47, 'Sabir Kirpal', '2021-11-19', '107.8 B', 16.30, 'Growth', null);
+INSERT INTO Stocks VALUES ('GPS', 'Gap', 16.59, 36.26, 'Sabir Kirpal', '2021-11-16', '2.5 B', 5.32, 'Safe', NULL);
+Insert INTO Stocks Values ('RIOT', 'Riot Blockchain', 8.66, 77.90, 'Sabir Kirpal', '2021-10-27','2 B', Null,  'Growth', Null);
 
 INSERT INTO Crypto VALUES ('BTC', 'Bitcoin', 16351.03, 68789.63,  'Navroop Khangura', '2021-11-16', 43.13, '18.9 M','21 M', 'Digital Gold', 'TRUE');
 INSERT INTO Crypto VALUES ('ETH', 'Etherum', 465.70, 4891.70, 'Navroop Khangura', '2021-11-16', 19.23,'118.6 M','Unknown', 'Build and publish smart contracts', 'FALSE');
 INSERT INTO Crypto VALUES ('DOGE', 'Dogecoin', .00029, .7376, 'Navroop Khangura', '2021-11-16', 1.19, '132.4 B','Unknown', 'Meme', 'FALSE');
+INSERT INTO Crypto VALUES ('SOL', 'Solana', 0.51, 260.06,  'Sabir Kirpal', '2021-11-11', 2.3, '305.9 M','500 M', 'Build cheap smart contracts', 'FALSE');
+INSERT INTO Crypto VALUES ('CRO', 'Crypto.com', 0.05, 0.64, 'Sabir Kirpal', '2021-11-03', 5.3, '25 B','31 B', 'Ethereum token', 'FALSE');
+INSERT INTO Crypto VALUES ('ALGO', 'Algorand', 0.10, 1.78, 'Sabir Kirpal', '2021-08-16', 1.9, '6.3 B','10 B', 'Scalability and Security', 'FALSE');
+INSERT INTO Crypto VALUES ('LTC', 'Litecoin', 1.11, 420.00,  'Sabir Kirpal', '2021-04-23', 8.3, '69.1 M','85 M', 'Faster Transactions', 'TRUE');
+INSERT INTO Crypto VALUES ('ATOM', 'Cosmos', 1.13, 44.80, 'Sabir Kirpal', '2021-11-16', 1.2,'225.8','Unknown', 'Internet of Blockchains', 'TRUE');
+INSERT INTO Crypto VALUES ('LRC', 'Loopring', 0.02, 3.92, 'Sabir Kirpal', '2021-11-16', 1.19, '1.3 B','1.5 B', 'Ethereum token', 'FALSE');
+
+
+INSERT INTO Forex VALUES ("USD/JPY", "USD", 114.25, "Sabir Kirpal", '2021-11-16');
+INSERT INTO Forex VALUES ("USD/CNY", "USD", 6.38, "Sabir Kirpal", '2021-11-16');
+INSERT INTO Forex VALUES ("CNY/INR", "CNY", 11.61, "Sabir Kirpal", '2021-11-16');
+INSERT INTO Forex VALUES ("GBP/INR", "GPB", 100.11, "Sabir Kirpal", '2021-11-16');
+INSERT INTO Forex VALUES ("EUR/USD", "EUR", 1.1287, "Sabir Kirpal", '2021-12-07');
+INSERT INTO Forex VALUES ("GBP/USD", "GBP", 1.3285, "Sabir Kirpal", '2021-12-07');
+INSERT INTO Forex VALUES ("USD/GPG", "USD", 113.68, "Sabir Kirpal", '2021-12-07');
+INSERT INTO Forex VALUES ("USD/CAD", "USD", 1.2724, "Sabir Kirpal", '2021-12-07');
+INSERT INTO Forex VALUES ("AUD/USD", "AUD", 0.7093, "Sabir Kirpal", '2021-12-07');
+INSERT INTO Forex VALUES ("USD/CHF", "USD", 0.9243, "Sabir Kirpal", '2021-12-07');
+INSERT INTO Forex VALUES ("AUD/JPY", "AUD", 80.64, "Sabir Kirpal", '2021-12-07');
+INSERT INTO Forex VALUES ("USD/MXN", "USD", 21.2052, "Sabir Kirpal", '2021-12-07');
+
+
 
 INSERT INTO Watchlist VALUES(1,'T');
 INSERT INTO Watchlist VALUES(1,'DKNG');
@@ -25,6 +56,207 @@ INSERT INTO Watchlist Values(1, 'DOGE');
 INSERT INTO Watchlist Values(2, 'ETH');
 Insert into Watchlist Values(2, 'CLOV');
 Insert into Watchlist values(3, 'AMZN');
+INSERT INTO Watchlist VALUES(4,'SDC');
+INSERT INTO Watchlist VALUES(9,'CRO');
+INSERT INTO Watchlist VALUES(2,'AAPL');
+INSERT INTO Watchlist Values(5, 'RIOT');
+INSERT INTO Watchlist Values(8, 'LTC');
+INSERT INTO Watchlist Values(6, 'DOGE');
+INSERT INTO Watchlist Values(4, 'WOOF');
+Insert into Watchlist Values(7, 'ALGO');
+Insert into Watchlist values(9, 'GPS');
+
+
 
 INSERT INTO Brokerage VALUES('Robinhood', 'All', 0);
 INSERT INTO Brokerage VALUES('Coinbase', 'Crypto', 0);
+INSERT INTO Brokerage VALUES('TD Ameritrade', 'Stocks', 6.95);
+INSERT INTO Brokerage VALUES('WeBull', 'ALL', 3);
+INSERT INTO Brokerage VALUES('Fidelity', 'Stocks', 0);
+INSERT INTO Brokerage VALUES('IG', 'Forex', 8);
+INSERT INTO Brokerage VALUES('eToro', 'All', 1);
+INSERT INTO Brokerage VALUES('Interactive Brokers', 'Forex', 4);
+
+
+INSERT INTO fav_stock VALUES(1,'BYND');
+INSERT INTO fav_stock VALUES(2,'AAPL');
+Insert into fav_stock values(3, 'AMZN');
+INSERT INTO fav_stock VALUES(4,'SDC');
+INSERT INTO fav_stock Values(5, 'RIOT');
+INSERT INTO fav_stock Values(6, 'RIOT');
+INSERT INTO fav_stock VALUES(7,'DKNG');
+INSERT INTO fav_stock VALUES(8,'AAPL');
+INSERT INTO fav_stock VALUES(9,'MRNA');
+
+
+INSERT INTO fav_crypto VALUES(1,'ALGO');
+INSERT INTO fav_crypto VALUES(2,'BTC');
+Insert into fav_crypto values(3, 'CRO');
+INSERT INTO fav_crypto VALUES(4,'LRC');
+INSERT INTO fav_crypto Values(5, 'ETH');
+INSERT INTO fav_crypto Values(6, 'BTC');
+INSERT INTO fav_crypto VALUES(7,'SOL');
+INSERT INTO fav_crypto VALUES(8,'DOGE');
+INSERT INTO fav_crypto VALUES(9,'ETH');
+
+
+INSERT INTO fav_forex VALUES(1,'AUD/USD');
+INSERT INTO fav_forex VALUES(2,'GBP/INR');
+Insert into fav_forex values(3, 'CNY/INR');
+INSERT INTO fav_forex VALUES(4,'USD/MXN');
+INSERT INTO fav_forex Values(5, 'USD/CAD');
+INSERT INTO fav_forex Values(6, 'USD/CHF');
+INSERT INTO fav_forex VALUES(7,'AUD/JPY');
+INSERT INTO fav_forex VALUES(8,'CNY/INR');
+INSERT INTO fav_forex VALUES(9,'AUD/USD');
+
+
+INSERT INTO s_tradesOn VALUES ('T', 'Robinhood');
+INSERT INTO s_tradesOn VALUES ('DKNG', 'Robinhood');
+INSERT INTO s_tradesOn VALUES ('BYND', 'Robinhood');
+INSERT INTO s_tradesOn VALUES ('AMZN', 'Robinhood');
+INSERT INTO s_tradesOn VALUES ('AAPL', 'Robinhood');
+Insert INTO s_tradesOn Values ('CLOV', 'Robinhood');
+INSERT INTO s_tradesOn VALUES ('TTCF', 'Robinhood');
+INSERT INTO s_tradesOn VALUES ('SDC', 'Robinhood');
+INSERT INTO s_tradesOn VALUES ('WOOF', 'Robinhood');
+INSERT INTO s_tradesOn VALUES ('MRNA', 'Robinhood');
+INSERT INTO s_tradesOn VALUES ('GPS', 'Robinhood');
+Insert INTO s_tradesOn Values ('RIOT', 'Robinhood');
+INSERT INTO s_tradesOn VALUES ('T', 'TD Ameritrade');
+INSERT INTO s_tradesOn VALUES ('DKNG', 'TD Ameritrade');
+INSERT INTO s_tradesOn VALUES ('BYND', 'TD Ameritrade');
+INSERT INTO s_tradesOn VALUES ('AMZN', 'TD Ameritrade');
+INSERT INTO s_tradesOn VALUES ('AAPL', 'TD Ameritrade');
+Insert INTO s_tradesOn Values ('CLOV', 'TD Ameritrade');
+INSERT INTO s_tradesOn VALUES ('TTCF', 'TD Ameritrade');
+INSERT INTO s_tradesOn VALUES ('SDC', 'TD Ameritrade');
+INSERT INTO s_tradesOn VALUES ('WOOF', 'TD Ameritrade');
+INSERT INTO s_tradesOn VALUES ('MRNA', 'TD Ameritrade');
+INSERT INTO s_tradesOn VALUES ('GPS', 'TD Ameritrade');
+Insert INTO s_tradesOn Values ('RIOT', 'TD Ameritrade');
+INSERT INTO s_tradesOn VALUES ('T', 'WeBull');
+INSERT INTO s_tradesOn VALUES ('DKNG', 'WeBull');
+INSERT INTO s_tradesOn VALUES ('BYND', 'WeBull');
+INSERT INTO s_tradesOn VALUES ('AMZN', 'WeBull');
+INSERT INTO s_tradesOn VALUES ('AAPL', 'WeBull');
+Insert INTO s_tradesOn Values ('CLOV', 'WeBull');
+INSERT INTO s_tradesOn VALUES ('TTCF', 'WeBull');
+INSERT INTO s_tradesOn VALUES ('SDC', 'WeBull');
+INSERT INTO s_tradesOn VALUES ('WOOF', 'WeBull');
+INSERT INTO s_tradesOn VALUES ('MRNA', 'WeBull');
+INSERT INTO s_tradesOn VALUES ('GPS', 'WeBull');
+Insert INTO s_tradesOn Values ('RIOT', 'WeBull');
+INSERT INTO s_tradesOn VALUES ('T', 'Fidelity');
+INSERT INTO s_tradesOn VALUES ('DKNG', 'Fidelity');
+INSERT INTO s_tradesOn VALUES ('BYND', 'Fidelity');
+INSERT INTO s_tradesOn VALUES ('AMZN', 'Fidelity');
+INSERT INTO s_tradesOn VALUES ('AAPL', 'Fidelity');
+Insert INTO s_tradesOn Values ('CLOV', 'Fidelity');
+INSERT INTO s_tradesOn VALUES ('TTCF', 'Fidelity');
+INSERT INTO s_tradesOn VALUES ('SDC', 'Fidelity');
+INSERT INTO s_tradesOn VALUES ('WOOF', 'Fidelity');
+INSERT INTO s_tradesOn VALUES ('MRNA', 'Fidelity');
+INSERT INTO s_tradesOn VALUES ('GPS', 'Fidelity');
+Insert INTO s_tradesOn Values ('RIOT', 'Fidelity');
+INSERT INTO s_tradesOn VALUES ('T', 'eToro');
+INSERT INTO s_tradesOn VALUES ('DKNG', 'eToro');
+INSERT INTO s_tradesOn VALUES ('BYND', 'eToro');
+INSERT INTO s_tradesOn VALUES ('AMZN', 'eToro');
+INSERT INTO s_tradesOn VALUES ('AAPL', 'eToro');
+Insert INTO s_tradesOn Values ('CLOV', 'eToro');
+INSERT INTO s_tradesOn VALUES ('TTCF', 'eToro');
+INSERT INTO s_tradesOn VALUES ('SDC', 'eToro');
+INSERT INTO s_tradesOn VALUES ('WOOF', 'eToro');
+INSERT INTO s_tradesOn VALUES ('MRNA', 'eToro');
+INSERT INTO s_tradesOn VALUES ('GPS', 'eToro');
+Insert INTO s_tradesOn Values ('RIOT', 'eToro');
+
+
+
+INSERT INTO c_tradesOn VALUES ('BTC', "Coinbase");
+INSERT INTO c_tradesOn VALUES ('ETH', "Coinbase");
+INSERT INTO c_tradesOn VALUES ('DOGE', "Coinbase");
+INSERT INTO c_tradesOn VALUES ('SOL', "Coinbase");
+INSERT INTO c_tradesOn VALUES ('CRO', "Coinbase");
+INSERT INTO c_tradesOn VALUES ('ALGO', "Coinbase");
+INSERT INTO c_tradesOn VALUES ('LTC', "Coinbase");
+INSERT INTO c_tradesOn VALUES ('ATOM', "Coinbase");
+INSERT INTO c_tradesOn VALUES ('LRC', "Coinbase");
+INSERT INTO c_tradesOn VALUES ('BTC', "Robinhood");
+INSERT INTO c_tradesOn VALUES ('ETH', "Robinhood");
+INSERT INTO c_tradesOn VALUES ('DOGE', "Robinhood");
+INSERT INTO c_tradesOn VALUES ('SOL', "Robinhood");
+INSERT INTO c_tradesOn VALUES ('CRO', "Robinhood");
+INSERT INTO c_tradesOn VALUES ('ALGO', "Robinhood");
+INSERT INTO c_tradesOn VALUES ('LTC', "Robinhood");
+INSERT INTO c_tradesOn VALUES ('ATOM', "Robinhood");
+INSERT INTO c_tradesOn VALUES ('LRC', "Robinhood");
+INSERT INTO c_tradesOn VALUES ('BTC', "WeBull");
+INSERT INTO c_tradesOn VALUES ('ETH', "WeBull");
+INSERT INTO c_tradesOn VALUES ('DOGE', "WeBull");
+INSERT INTO c_tradesOn VALUES ('SOL', "WeBull");
+INSERT INTO c_tradesOn VALUES ('CRO', "WeBull");
+INSERT INTO c_tradesOn VALUES ('ALGO', "WeBull");
+INSERT INTO c_tradesOn VALUES ('LTC', "WeBull");
+INSERT INTO c_tradesOn VALUES ('ATOM', "WeBull");
+INSERT INTO c_tradesOn VALUES ('LRC', "WeBull");
+INSERT INTO c_tradesOn VALUES ('BTC', "eToro");
+INSERT INTO c_tradesOn VALUES ('ETH', "eToro");
+INSERT INTO c_tradesOn VALUES ('DOGE', "eToro");
+INSERT INTO c_tradesOn VALUES ('SOL', "eToro");
+INSERT INTO c_tradesOn VALUES ('CRO', "eToro");
+INSERT INTO c_tradesOn VALUES ('ALGO', "eToro");
+INSERT INTO c_tradesOn VALUES ('LTC', "eToro");
+INSERT INTO c_tradesOn VALUES ('ATOM', "eToro");
+INSERT INTO c_tradesOn VALUES ('LRC', "eToro");
+
+
+INSERT INTO f_tradesOn VALUES ("USD/JPY", "IG");
+INSERT INTO f_tradesOn VALUES ("USD/CNY", "IG");
+INSERT INTO f_tradesOn VALUES ("CNY/INR", "IG");
+INSERT INTO f_tradesOn VALUES ("GBP/INR", "IG");
+INSERT INTO f_tradesOn VALUES ("EUR/USD", "IG");
+INSERT INTO f_tradesOn VALUES ("GBP/USD", "IG");
+INSERT INTO f_tradesOn VALUES ("USD/GPG", "IG");
+INSERT INTO f_tradesOn VALUES ("USD/CAD", "IG");
+INSERT INTO f_tradesOn VALUES ("AUD/USD", "IG");
+INSERT INTO f_tradesOn VALUES ("USD/CHF", "IG");
+INSERT INTO f_tradesOn VALUES ("AUD/JPY", "IG");
+INSERT INTO f_tradesOn VALUES ("USD/MXN", "IG");
+INSERT INTO f_tradesOn VALUES ("USD/JPY", "Interactive Brokers");
+INSERT INTO f_tradesOn VALUES ("USD/CNY", "Interactive Brokers");
+INSERT INTO f_tradesOn VALUES ("CNY/INR", "Interactive Brokers");
+INSERT INTO f_tradesOn VALUES ("GBP/INR", "Interactive Brokers");
+INSERT INTO f_tradesOn VALUES ("EUR/USD", "Interactive Brokers");
+INSERT INTO f_tradesOn VALUES ("GBP/USD", "Interactive Brokers");
+INSERT INTO f_tradesOn VALUES ("USD/GPG", "Interactive Brokers");
+INSERT INTO f_tradesOn VALUES ("USD/CAD", "Interactive Brokers");
+INSERT INTO f_tradesOn VALUES ("AUD/USD", "Interactive Brokers");
+INSERT INTO f_tradesOn VALUES ("USD/CHF", "Interactive Brokers");
+INSERT INTO f_tradesOn VALUES ("AUD/JPY", "Interactive Brokers");
+INSERT INTO f_tradesOn VALUES ("USD/MXN", "Interactive Brokers");
+
+
+INSERT INTO u_tradesOn VALUES (1, "Robinhood");
+INSERT INTO u_tradesOn VALUES (2, "TD Ameritrade");
+INSERT INTO u_tradesOn VALUES (7, "WeBull");
+INSERT INTO u_tradesOn VALUES (8, "IG");
+INSERT INTO u_tradesOn Values (9, "eToro");
+INSERT INTO u_tradesOn VALUES (3, "Robinhood");
+INSERT INTO u_tradesOn VALUES (4, "WeBull");
+INSERT INTO u_tradesOn VALUES (5, "WeBull");
+INSERT INTO u_tradesOn VALUES (2, "IG");
+INSERT INTO u_tradesOn VALUES (7, "eToro");
+INSERT INTO u_tradesOn VALUES (8, "eToro");
+INSERT INTO u_tradesOn Values (9, "TD Ameritrade");
+INSERT INTO u_tradesOn VALUES (7, "Coinbase");
+INSERT INTO u_tradesOn VALUES (8, "Coinbase");
+INSERT INTO u_tradesOn Values (6, "Robinhood");
+INSERT INTO u_tradesOn VALUES (2, "IG");
+INSERT INTO u_tradesOn VALUES (7, "Interactive Brokers");
+INSERT INTO u_tradesOn VALUES (8, "Robinhood");
+INSERT INTO u_tradesOn Values (9, "Coinbase");
+INSERT INTO u_tradesOn VALUES (7, "Robinhood");
+INSERT INTO u_tradesOn VALUES (8, "Robinhood");
+INSERT INTO u_tradesOn Values (9, "TD Ameritrade");

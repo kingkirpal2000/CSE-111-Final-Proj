@@ -36,7 +36,7 @@ create table Forex(
     currency_code varchar(5) PRIMARY KEY,
     currency varchar(20),
     Price float(5,2) not null,
-    added_by date not null,
+    added_by varchar(20) not null,
     added_date date not null
 );
 
