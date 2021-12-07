@@ -53,23 +53,23 @@ public class Final {
                         System.out.print("\nEnter stock name: ");
                         name = scan.nextLine();
                         System.out.print("\nEnter stock low: ");
-                        low = scan.nextDouble();   
+                        low = scan.nextDouble();
                         System.out.print("\nEnter stock high: ");
-                        high = scan.nextDouble();         
+                        high = scan.nextDouble();
                         System.out.print("\nEnter your name: ");
-                        added_by = scan.next();  
-                        added_by += scan.next();  
+                        added_by = scan.next();
+                        added_by += scan.next();
                         System.out.print("\nEnter todays date(format: yyyy-mm-dd): ");
-                        date = scan.next();    
+                        date = scan.next();
                         System.out.print("\nEnter the market cap for the Stock: ");
-                        market_cap = scan.next(); 
-                        market_cap += scan.next();                   
+                        market_cap = scan.next();
+                        market_cap += scan.next();
                         System.out.print("\nEnter the stock's PE ratio: ");
-                        PE = scan.nextDouble(); 
+                        PE = scan.nextDouble();
                         System.out.print("\nEnter the type of Stock(Ex: Growth, Safe, Div): ");
-                        type = scan.next(); 
+                        type = scan.next();
                         System.out.print("\nEnter the div rate of stock(if no dividend then enter 0): ");
-                        div_rate = scan.nextDouble(); 
+                        div_rate = scan.nextDouble();
                         addStock(ticker, name, low, high, added_by, date, market_cap, PE, type, div_rate);
                         break;
                     }
@@ -77,32 +77,32 @@ public class Final {
                     //adding Crypto to ETF
                         String ticker, name, added_by, purpose, date, current_supply, max_supply = " ";
                         double low, high, dominance = 0;
-                        Boolean mine = false; 
+                        Boolean mine = false;
                         System.out.print("\nEnter crypto ticker: ");
                         ticker = scan.nextLine();
-                        System.out.print("\nEnter crypto name: ");                            
+                        System.out.print("\nEnter crypto name: ");
                         name = scan.nextLine();
                         System.out.print("\nEnter crypto low: ");
-                        low = scan.nextDouble();   
+                        low = scan.nextDouble();
                         System.out.print("\nEnter crypto high: ");
-                        high = scan.nextDouble();         
+                        high = scan.nextDouble();
                         System.out.print("\nEnter your name: ");
-                        added_by = scan.next();                              
-                        added_by += scan.next();  
+                        added_by = scan.next();
+                        added_by += scan.next();
                         System.out.print("\nEnter todays date(format: yyyy-mm-dd): ");
-                        date = scan.next();    
+                        date = scan.next();
                         System.out.print("\nEnter the market dominace rate for this crypto: ");
-                        dominance = scan.nextDouble(); 
-                        System.out.print("\nEnter the current total supply for this crypto: ");                            
+                        dominance = scan.nextDouble();
+                        System.out.print("\nEnter the current total supply for this crypto: ");
                         current_supply = scan.next();
-                        current_supply += scan.next();   
+                        current_supply += scan.next();
                         System.out.print("\nEnter the max supply for this crypto(Enter unknown if no max supply): ");
-                        max_supply += scan.next();                 
+                        max_supply += scan.next();
                         System.out.print("\nEnter the purpose of this crypto: ");
-                        purpose = scan.next(); 
-                        purpose += scan.next();  
+                        purpose = scan.next();
+                        purpose += scan.next();
                         System.out.print("\nEnter True or False. Is crypto mineable? ");
-                        mine = scan.nextBoolean();                          
+                        mine = scan.nextBoolean();
                         addCrypto(ticker, name, low, high, added_by, date, dominance, current_supply, max_supply, purpose, mine);
                         break;
                     }
@@ -118,12 +118,11 @@ public class Final {
                         addBrokerage(name, type, fee);
                         break;
                     }
-                    case 0: 
-                    {
+                    case 0:{
                         quit = true;
                         break;
                     }
-                    default: 
+                    default:
                     {
                         System.out.println("Unknown input");
                     }
@@ -131,7 +130,7 @@ public class Final {
             }
             connection.close();
             scan.close();
-        } 
+        }
         catch (SQLException e) {
             System.err.println(e.getMessage());
         }
