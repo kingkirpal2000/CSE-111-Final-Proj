@@ -14,7 +14,7 @@ public class Final {
             int x = 0;
             boolean quit = false;
             while (!quit) {
-                System.out.println("For admin use: ");
+                System.out.println("\nFor admin use: ");
                 //Admin uses
                 System.out.println("\t-Enter 1 to add to Stocks ETF.");
                 System.out.println("\t-Enter 2 to add to Crypto ETF.");
@@ -266,34 +266,12 @@ public class Final {
                     }
                     case 15: {
                     //print crypto etf
-                    System.out.println();
-                    System.out.println("\nCrypto ETF:");
-                    System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------");
-                    System.out.printf("%5s %20s %10s %10s %15s %15s %15s %15s %15s %15s %20 ", "ticker", "name", "low", "high", "added_by", "added_date", "market_dom", "current_supply", "max_supply", "purpose", "mine");
-                    System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------");
-                    String sql = " Select * from Crytpo";
-                    Statement s =connection.createStatement();
-                    ResultSet r =s.executeQuery(sql);
-                    while(r.next()){
-                        String ticker = r.getString(1);
-                        String name = r.getString(2); 
-                        double low = r.getDouble(3);
-                        double high = r.getDouble(4);   
-                        String added_by = r.getString(5);
-                        String added_date = r.getString(6);
-                        double market_dom = r.getDouble(7);
-                        String current_supply = r.getString(8);
-                        String max_supply = r.getString(9);   
-                        String purpose = r.getString(10);
-                        String mine = r.getString(11);
-                        System.out.printf("%5s %20s %10s %10s %15s %15s %15s %15s %15s %15s %20s", ticker, name, low, high, added_by, added_date, market_dom, current_supply, max_supply, purpose, mine);
-                        System.out.println();
-                    }
-                    break;
-                        
+                        printCrypto();
+                        break;
                     } 
                     case 16: {
-                        
+                        printForex();
+                        break;
                     } 
                     case 17: {
                     //Print your watchlist
@@ -328,7 +306,16 @@ public class Final {
                         break;    
                     } 
                     case 20: {
-                        
+                    //create account 
+                        String name, type = "";
+                        System.out.println("Enter your name: ");
+                        name = scan.next();
+                        name = name + " ";
+                        name += scan.next();
+                        System.out.println("Enter your trading type(EX: Cryto, Div, Forex, Safe, Growth): ");
+                        type = scan.next();
+                        addUser(name, type);
+                        break;
                     }           
                     case 0: {
                         quit = true;
@@ -585,6 +572,68 @@ public class Final {
         }
     }
 
+    public static void printCrypto(){
+        Connection c = null;
+        try{
+            c = DriverManager.getConnection("jdbc:sqlite:Trading.db");
+            Statement s = c.createStatement();
+            System.out.println();
+            System.out.println("\nCrypto ETF:");
+            System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.printf("%5s %10s %10s %10s %10s %15s %15s %15s %10s %20s %20s ", "ticker", "name", "low", "high", "added_by", "added_date", "market_dom", "current_supply", "max_supply", "purpose", "mine");
+            System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------");
+            String sql = " Select * from Crypto";
+            ResultSet r =s.executeQuery(sql);
+            while(r.next()){
+                String ticker = r.getString(1);
+                String name = r.getString(2); 
+                double low = r.getDouble(3);
+                double high = r.getDouble(4);   
+                String added_by = r.getString(5);
+                String added_date = r.getString(6);
+                double market_dom = r.getDouble(7);
+                String current_supply = r.getString(8);
+                String max_supply = r.getString(9);   
+                String purpose = r.getString(10);
+                String mine = r.getString(11);
+                System.out.printf("%5s %10s %10s %10s %10s %15s %10s %10s %10s %20s %20s", ticker, name, low, high, added_by, added_date, market_dom, current_supply, max_supply, purpose, mine);
+                System.out.println();
+            }
+            c.close();
+        }
+        catch(SQLException e){
+            System.err.println("ERROR: " + e.getMessage());
+        }
+    }
+
+    public static void printForex(){
+        Connection c=null;
+        try{
+            c = DriverManager.getConnection("jdbc:sqlite:Trading.db");
+            Statement s = c.createStatement();
+            System.out.println();
+            System.out.println("\nForexs ETF:");
+            System.out.println("-----------------------------------------------------------------");
+            System.out.printf("%5s %10s %10s %15s %15s ", "currency_code", "currency", "Price", "added_by", "added_date");
+            System.out.println("------------------------------------------------------------------");
+            String sql = " Select * from Forex";
+            ResultSet r =s.executeQuery(sql);
+            while(r.next()){
+                String currency_code = r.getString(1);
+                String currency = r.getString(2); 
+                double Price = r.getDouble(3);  
+                String added_by = r.getString(4);
+                String added_date = r.getString(5);
+                System.out.printf("%5s %10s %10s %15s" , currency_code, currency, Price, added_by, added_date);
+                System.out.println();
+            }
+            c.close();
+        }
+        catch(SQLException e){
+        System.err.println("ERROR: " + e.getMessage());
+        }
+    }
+
     public static void findStock(String ticker){
         Connection c=null;
         try{
@@ -636,7 +685,7 @@ public class Final {
                 String max_supply = r.getString(9);   
                 String purpose = r.getString(10); 
                 String mine = r.getString(11); 
-                System.out.printf("%5s %20s %10s %10s %15s %15s %15s %10s %10s %10s %10", ticker, name, low, high, added_by, added_date, market_dom, current_supply, max_supply, purpose, mine);
+                System.out.printf("%5s %20s %10s %10s %15s %15s %15s %10s %10s %10s %10s ", ticker, name, low, high, added_by, added_date, market_dom, current_supply, max_supply, purpose, mine);
                 System.out.println();
             }
             c.close();
@@ -654,7 +703,7 @@ public class Final {
             ResultSet r = s.executeQuery("SELECT count(*) as total FROM Users");
             int total = r.getInt("total");
             total = total + 1; 
-            String add = "INSERT into Users values("+total+", \'"+name+"\', \'user\', \'"+type+"\')";
+            String add = "INSERT into Users values("+total+", \'"+name+"\', \'User\', \'"+type+"\')";
             s.executeUpdate(add);
             System.out.println("Added User: "+name+" with id: "+total);
             c.close();
